@@ -25,7 +25,8 @@
     }
 
     window.onload = function () {
-        var ws = new WebSocket("ws://localhost:8080/bbq/websocket/bbq");
+        var host = "6de0073b.ngrok.io"
+        var ws = new WebSocket("ws://"+host+"/bbq/websocket/bbq");
         ws.onopen = function(){
         };
         ws.onmessage = function(message){
