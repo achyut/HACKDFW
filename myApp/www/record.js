@@ -40,7 +40,7 @@ function parseIsoDatetime(dtstr) {
 }
 
 window.onload = function () {
-    var host = "6de0073b.ngrok.io"
+    var host = "d1e69ef8.ngrok.io"
     var ws = new WebSocket("ws://"+host+"/bbq/websocket/bbq");
     ws.onopen = function(){
     };
