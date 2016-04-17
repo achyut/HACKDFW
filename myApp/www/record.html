@@ -1,7 +1,8 @@
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 </head>
-<body>
+<body ng-app="starter">
 <div class="container">
   <!--
   <div class="jumbotron text-center pagination-centered">
@@ -15,9 +16,11 @@
   <div class="center-block text-center">
     <br>
     <button onClick="stopJS()" type="button" class="btn btn-danger btn-lg">Stop</button>
+    <button onClick="notifyTemperatureIncrease()" type="button" class="btn btn-danger btn-lg">Notify</button>
   </div>
 </div>
-
+<script src="cordova.js"></script>
 <script type="text/javascript" src="canvasjs.min.js"></script>
-<script language=javascript" type="text/javascript" src="record.js"></script>
+<script type="text/javascript" src="record.js"></script>
 </body>
+</html>

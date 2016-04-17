@@ -1,3 +1,29 @@
+function notifyTemperatureIncrease(){
+
+document.addEventListener('deviceready', function () {
+     var sound = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beep.caf';
+
+    // Schedule notification for tomorrow to remember about the meeting
+    cordova.plugins.notification.local.schedule({
+        id: 10,
+        title: "Be cautious!!! Babeque about to burn!!",
+        text: "Your barbeque is about to burn out. Please check it.",
+        sound: sound,
+        icon: 'res://icon',
+        smallIcon: 'res://ic_popup_sync'
+    });
+
+    // Join BBM Meeting when user has clicked on the notification 
+    cordova.plugins.notification.local.on("click", function (notification) {
+        if (notification.id == 10) {
+            
+            //joinMeeting(notification.data.meetingId);
+        }
+    });
+
+}, false);
+
+}
 window.onload = function () {
   var url = document.location.href;
   url += "?stop=hello"
@@ -8,8 +34,6 @@ window.onload = function () {
     tmp = params[i].split('=');
     data[tmp[0]] = tmp[1];
   }
-  //document.getElementById('here').innerHTML = data.name;
-  //console.log(document.getElementById('header').text);
   document.getElementById('header').innerHTML = data.name;
 }
 
