@@ -64,7 +64,7 @@ function parseIsoDatetime(dtstr) {
 }
 
 window.onload = function () {
-    var host = "6de0073b.ngrok.io"
+    var host = "d1e69ef8.ngrok.io"
     var ws = new WebSocket("ws://"+host+"/bbq/websocket/bbq");
     ws.onopen = function(){
     };
@@ -75,6 +75,9 @@ window.onload = function () {
         var xval = parseIsoDatetime(obj['timestamp']);
         var yval = obj['value'];
         document.getElementById("currenttemp").innerHTML = yval;
+        if(yval==450){
+            notifyTemperatureIncrease();
+        }
         updateChart(xval,yval);
     };
     function postToServer(){
